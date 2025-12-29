@@ -1,6 +1,6 @@
 # 9001app-firebase - Estado General del Proyecto
 
-> **Última Actualización:** 2025-12-24  
+> **Última Actualización:** 2025-12-28  
 > **Estado:** En Desarrollo Activo  
 > **Ambiente Local:** Puerto 3000
 
@@ -13,7 +13,8 @@
 ### Características Principales
 
 - ✅ **Multi-tenant**: Soporte para múltiples organizaciones
-- ✅ **Dashboard personalizado** por rol de usuario
+- ✅ **Centro Principal Unificado**: Vista principal con tabs (Noticias, Madurez Org, Mini Copilot)
+- ✅ **Comentarios Inline (estilo Facebook)**: Interacción social en posts
 - ✅ **Gestión documental** completa con versionado
 - ✅ **Auditorías internas** con hallazgos y acciones
 - ✅ **CRM y Riesgo Crediticio** integrado para clientes
@@ -50,6 +51,7 @@
 │   ├── app/
 │   │   ├── (auth)/           # Login y autenticación
 │   │   ├── (dashboard)/      # Panel principal (28 módulos)
+│   │   │   └── noticias/     # Centro Principal con tabs
 │   │   └── api/              # 40+ grupos de APIs
 │   ├── components/           # 27 grupos de componentes
 │   ├── contexts/             # Contextos React
@@ -74,7 +76,14 @@
 2. **Don Juan GIS** - Implementación del motor de verificación (4-6 semanas)
 3. **App Registros Internos** - Formularios dinámicos para operarios (Q2 2026)
 
-### Completado Recientemente
+### Completado Recientemente (Diciembre 2025)
+- ✅ **Kanban de Procesos con Drag & Drop**: Mover tarjetas entre etapas arrastrando
+- ✅ **Checklists por Etapa**: Definir puntos de verificación por etapa de proceso
+- ✅ **API Admin SDK para Tareas**: Migración a Firebase Admin SDK resolviendo permisos
+- ✅ **Centro Principal Unificado**: Noticias como vista principal con tabs integrados
+- ✅ **Tabs Internos**: Noticias, Madurez Organizacional, Mini Copilot en un solo lugar
+- ✅ **Comentarios Inline (Facebook-style)**: Expandibles directamente en cada post
+- ✅ **Navegación Simplificada**: Dashboard, Madurez y Mini Copiloto removidos del sidebar
 - ✅ **App Vendedor (PWA)**: Implementación completa offline-first
 - ✅ Análisis técnico integración Don Cándido + Don Juan GIS
 - ✅ Integración WhatsApp Business API vía Twilio

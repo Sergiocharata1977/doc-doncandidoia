@@ -1,11 +1,23 @@
 # Módulos y Funcionalidades - 9001app-firebase
 
 > **Total Módulos Dashboard:** 28  
-> **Última Actualización:** 2025-12-24
+> **Última Actualización:** 2025-12-26
 
 ---
 
 ## 📋 Módulos del Dashboard
+
+### 🏠 Centro Principal (Vista por Defecto)
+
+La ruta `/noticias` es ahora la **vista principal** del sistema. Contiene tabs horizontales que unifican las funciones de interacción y monitoreo más importantes:
+
+| Tab | Contenido | Descripción |
+|-----|-----------|-------------|
+| **📰 Noticias** | NewsFeed + Sidebars | Feed de publicaciones con comentarios inline (estilo Facebook) |
+| **📊 Madurez Org** | MaturityRadar + NextSteps | Diagnóstico dinámico de madurez ISO 9001 |
+| **🤖 Mini Copilot** | MCPExecutionList + KPIs | Panel de automatización con estadísticas |
+
+> **Nota:** Dashboard, Madurez Org. y Mini Copiloto fueron removidos del sidebar izquierdo para simplificar la navegación. Todo está accesible desde los tabs del Centro Principal.
 
 ### 🔍 Auditorías y Cumplimiento
 
@@ -14,7 +26,7 @@
 | **Auditorías** | `/auditorias` | Planificación, ejecución, informes de auditorías internas |
 | **Hallazgos** | `/hallazgos` | No conformidades, observaciones, oportunidades de mejora |
 | **Acciones** | `/acciones` | Acciones correctivas, preventivas, seguimiento |
-| **Puntos de Norma** | `/puntos-norma` | Mapeo de requisitos ISO 9001:2015 |
+| **Puntos de Norma** | `/puntos-norma` | Mapeo de requisitos ISO 9001:2015 con tabs: Dashboard, Matriz de Cumplimiento, Análisis de Gaps, Gestión |
 
 ### 📄 Documentación
 
@@ -55,14 +67,14 @@
 
 | Módulo | Ruta | Funcionalidades |
 |--------|------|-----------------|
-| **MCP Dashboard** | `/mcp` | Panel de automatización |
+| **MCP Dashboard** | `/mcp` o tab en Centro Principal | Panel de automatización |
 | **Ejecuciones** | `/mcp` | Historial de tareas ejecutadas |
 
 ### 📰 Comunicación
 
 | Módulo | Ruta | Funcionalidades |
 |--------|------|-----------------|
-| **Noticias** | `/noticias` | Noticias con IA y síntesis de voz |
+| **Noticias** | `/noticias` | Feed con comentarios inline (Facebook-style), reacciones, compartir |
 | **Notificaciones** | `/notificaciones` | Centro de notificaciones |
 | **Calendario** | `/calendario` | Eventos y recordatorios |
 | **Reuniones** | `/reuniones-trabajo` | Gestión de reuniones |

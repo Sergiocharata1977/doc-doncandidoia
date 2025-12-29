@@ -1,6 +1,6 @@
 'use client'
 
-import { Book, Code, Home, Menu, X } from 'lucide-react'
+import { Book, HelpCircle, Home, Menu, Target, X } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -21,7 +21,7 @@ export function Navigation() {
                 9001 App
               </div>
               <div className="text-xs text-gray-500 dark:text-gray-400">
-                Documentación
+                Manual de Usuario
               </div>
             </div>
           </Link>
@@ -35,21 +35,29 @@ export function Navigation() {
               <Home className="w-4 h-4 mr-2" />
               Inicio
             </Link>
-            
+
             <Link
               href="/manual-usuario"
               className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center"
             >
               <Book className="w-4 h-4 mr-2" />
-              Manual de Usuario
+              Módulos
             </Link>
-            
+
             <Link
-              href="/manual-programador"
-              className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center"
+              href="/manual-usuario/casos-uso"
+              className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center"
             >
-              <Code className="w-4 h-4 mr-2" />
-              Manual de Programadores
+              <Target className="w-4 h-4 mr-2" />
+              Casos de Uso
+            </Link>
+
+            <Link
+              href="/manual-usuario/faq"
+              className="px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center"
+            >
+              <HelpCircle className="w-4 h-4 mr-2" />
+              FAQ
             </Link>
           </div>
 
@@ -79,23 +87,32 @@ export function Navigation() {
                 <Home className="w-4 h-4 mr-3" />
                 Inicio
               </Link>
-              
+
               <Link
                 href="/manual-usuario"
                 className="px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center"
                 onClick={() => setIsOpen(false)}
               >
                 <Book className="w-4 h-4 mr-3" />
-                Manual de Usuario
+                Módulos
               </Link>
-              
+
               <Link
-                href="/manual-programador"
-                className="px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center"
+                href="/manual-usuario/casos-uso"
+                className="px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center"
                 onClick={() => setIsOpen(false)}
               >
-                <Code className="w-4 h-4 mr-3" />
-                Manual de Programadores
+                <Target className="w-4 h-4 mr-3" />
+                Casos de Uso
+              </Link>
+
+              <Link
+                href="/manual-usuario/faq"
+                className="px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors flex items-center"
+                onClick={() => setIsOpen(false)}
+              >
+                <HelpCircle className="w-4 h-4 mr-3" />
+                Preguntas Frecuentes
               </Link>
             </div>
           </div>

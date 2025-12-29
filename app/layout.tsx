@@ -6,9 +6,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: '9001 App - Documentación',
-  description: 'Documentación oficial de 9001 App - Sistema de Gestión ISO 9001',
-  keywords: ['ISO 9001', 'Documentación', 'Manual de Usuario', 'Manual de Programadores'],
+  title: '9001 App - Manual de Usuario',
+  description: 'Manual de Usuario de 9001 App - Aprende a implementar y gestionar tu Sistema de Gestión de Calidad ISO 9001:2015',
+  keywords: ['ISO 9001', 'Manual de Usuario', 'Sistema de Gestión de Calidad', 'SGC', 'Calidad'],
 }
 
 export default function RootLayout({

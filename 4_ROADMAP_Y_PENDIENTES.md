@@ -1,7 +1,7 @@
 # Roadmap y Pendientes - 9001app-firebase
 
-> **Estado al:** 2025-12-25  
-> **Próximo Milestone:** Chat IA Landing + Checkout Producción Mobbex
+> **Estado al:** 2025-12-28  
+> **Próximo Milestone:** Single de Tarjeta con Checklist + Chat IA Landing
 
 ---
 
@@ -21,12 +21,27 @@
 
 ## ✅ Recientemente Completado (Diciembre 2025)
 
+### 🏠 Centro Principal y Navegación
+- [x] **Centro Principal Unificado** - `/noticias` es ahora la vista principal
+- [x] **Tabs Horizontales Internos** - Noticias, Madurez Org, Mini Copilot en un solo lugar
+- [x] **Comentarios Inline (Facebook-style)** - Expandibles directamente en cada post con edit/delete
+- [x] **Navegación Simplificada** - Dashboard, Madurez Org., Mini Copiloto removidos del sidebar
+- [x] **Redirección por defecto** - Login ahora redirige a `/noticias` en vez de `/dashboard`
+
 ### Integraciones
 - [x] **Integración WhatsApp Business API vía Twilio** - Servicio completo implementado
 - [x] **Análisis técnico integración Don Cándido + Don Juan GIS** - Documento completo con arquitectura
 - [x] **App Vendedor (PWA)** - Implementación completa con offline, fotos, audio y GPS
 - [x] **MCP Extensión Chrome** - Estructura básica del proyecto creada
 - [x] **Mobbex Payments Integration** - Suscripciones con checkout, webhooks y UI
+
+### Kanban de Procesos (28 Dic 2025)
+- [x] **Drag & Drop de Tarjetas** - Mover tareas entre etapas con HTML5 nativo
+- [x] **API Tasks Admin SDK** - Migración a Firebase Admin SDK (fix error 500)
+- [x] **Checklists por Etapa** - Definir puntos de verificación para cada etapa
+- [x] **Botón Check en columnas** - Acceso rápido para configurar checklist
+- [x] **Dropdown fix** - Fondo blanco sólido en selectores
+- [x] **Documentación** - Creado `reglas-drag&drop.md`
 
 ### CRM y Riesgo Crediticio
 - [x] Formulario de Situación Patrimonial (Snapshot de riesgo)
