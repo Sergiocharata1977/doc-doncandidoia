@@ -39,11 +39,25 @@ export function useFirestoreCards() {
     const addCard = async (card: Omit<RoadmapCard, 'id' | 'createdAt' | 'updatedAt'>) => {
         try {
             const now = Timestamp.now();
-            await addDoc(collection(db, 'roadmap_cards'), {
-                ...card,
+            // Limpiar valores undefined - Firestore no los acepta
+            const cleanCard = {
+                title: card.title,
+                description: card.description || '',
+                columnId: card.columnId,
+                projectId: card.projectId || '9001app-firebase',
+                priority: card.priority || 'medium',
+                module: card.module ?? null,
+                taskType: card.taskType ?? null,
+                tags: card.tags || [],
+                assignee: card.assignee ?? null,
+                dueDate: card.dueDate ?? null,
+                sprintId: card.sprintId ?? null,
+                checklistQA: card.checklistQA || [],
+                checklistIntegracion: card.checklistIntegracion || [],
                 createdAt: now,
                 updatedAt: now,
-            });
+            };
+            await addDoc(collection(db, 'roadmap_cards'), cleanCard);
         } catch (err) {
             console.error('Error adding card:', err);
             throw err;

@@ -1,7 +1,7 @@
 # Roadmap y Pendientes - 9001app-firebase
 
-> **Estado al:** 2025-12-28  
-> **Próximo Milestone:** Single de Tarjeta con Checklist + Chat IA Landing
+> **Estado al:** 2025-12-29  
+> **Próximo Milestone:** Don Juan GIS Integration + WhatsApp Automation
 
 ---
 
@@ -21,19 +21,19 @@
 
 ## ✅ Recientemente Completado (Diciembre 2025)
 
+### 🤖 Don Cándido v2.0 - Asistente IA Completo (29 Dic 2025)
+- [x] **Sprint 1: Knowledge Base** - KnowledgeBaseService con contenido del Manual de Usuario
+- [x] **Sprint 2: Journey Dashboard** - `/journey` con las 6 fases ISO, checklist de tareas
+- [x] **Sprint 3: IA Proactiva** - ProactiveHintsService con sugerencias contextuales
+- [x] **Sprint 4: Generador de Documentos** - `/generador-documentos` con 6 templates ISO
+- [x] **Chat al 50%** - Ventana de chat reducida para mejor UX
+- [x] **Tiempo de respuesta** - Visualización de latencyMs en cada mensaje
+- [x] **Fix tools** - Herramientas solo se ejecutan con peticiones explícitas
+
 ### 🏠 Centro Principal y Navegación
 - [x] **Centro Principal Unificado** - `/noticias` es ahora la vista principal
 - [x] **Tabs Horizontales Internos** - Noticias, Madurez Org, Mini Copilot en un solo lugar
-- [x] **Comentarios Inline (Facebook-style)** - Expandibles directamente en cada post con edit/delete
-- [x] **Navegación Simplificada** - Dashboard, Madurez Org., Mini Copiloto removidos del sidebar
-- [x] **Redirección por defecto** - Login ahora redirige a `/noticias` en vez de `/dashboard`
-
-### Integraciones
-- [x] **Integración WhatsApp Business API vía Twilio** - Servicio completo implementado
-- [x] **Análisis técnico integración Don Cándido + Don Juan GIS** - Documento completo con arquitectura
-- [x] **App Vendedor (PWA)** - Implementación completa con offline, fotos, audio y GPS
-- [x] **MCP Extensión Chrome** - Estructura básica del proyecto creada
-- [x] **Mobbex Payments Integration** - Suscripciones con checkout, webhooks y UI
+- [x] **Comentarios Inline (Facebook-style)** - Expandibles directamente en cada post
 
 ### Kanban de Procesos (28 Dic 2025)
 - [x] **Drag & Drop de Tarjetas** - Mover tareas entre etapas con HTML5 nativo
@@ -64,6 +64,47 @@
 - [x] Mejoras estéticas en cards del dashboard MCP
 - [x] Sombras elegantes sin bordes
 - [x] Tipografía refinada
+
+### 📊 Módulo de Gestión de Calidad (30 Dic 2025)
+- [x] **Objetivos de Calidad** - CRUD completo con código automático `OBJ-[PROCESO]-[SEC]`
+- [x] **Indicadores** - KPIs con fórmulas, metas y responsables `IND-[OBJ]-[SEC]`
+- [x] **Mediciones** - Registro de valores con evidencias `MED-[IND]-[YYYYMMDD]`
+- [x] **Jerarquía Completa** - Proceso → Objetivos → Indicadores → Mediciones
+- [x] **Dialogs Simplificados** - Creación rápida con campos esenciales
+- [x] **Single Views** - Edición inline de todos los campos
+- [x] **APIs Admin SDK** - Migración completa a Firebase Admin
+- [x] **Integración en Procesos** - Sección de objetivos en Single de Proceso
+- [x] **Navegación Mejorada** - Tarjetas clickeables en todos los listados
+- [x] **Menú Reorganizado** - Calidad integrado en desplegable de Procesos
+- [x] **UX Mejorada** - Padding aumentado, mejor espaciado visual
+
+### 👥 Módulo RRHH Refactorizado (2 Ene 2026)
+
+**Evaluaciones Grupales:**
+- [x] Nueva arquitectura: evaluar múltiples empleados en una sola evaluación
+- [x] Tipo de evaluación: `evaluacion_competencias` | `evaluacion_capacitacion`
+- [x] Auto-carga de competencias desde puesto del empleado
+- [x] Matriz empleados × competencias con niveles 1-5
+- [x] Botón "Cerrar y Propagar" → copia niveles a Personnel.competenciasActuales
+- [x] Selector de capacitación para evaluaciones de eficacia
+
+**Matriz de Polivalencia:**
+- [x] Nueva página `/dashboard/rrhh/matriz-polivalencia`
+- [x] Visualización por empleado con colores por nivel
+- [x] Agrupación por categorías de competencia
+- [x] Filtros por departamento y búsqueda
+
+**Fixes y Mejoras:**
+- [x] Fix PersonnelListing: agregado organization_id al fetch
+- [x] Fix PositionFormData: competenciasRequeridas ahora es PositionCompetence[]
+- [x] Fix EvaluationService: null check para competencias
+- [x] Warnings cuando empleado no tiene puesto asignado
+- [x] UI mejorada: shadows, rounded corners, badges de tipo
+
+**Análisis Gap ISO 9001 (Procedimiento 5.2-5.4):**
+- [x] Documento de análisis comparativo vs procedimiento RRHH
+- [x] Identificados gaps: inducción, eficacia capacitación, asistencia
+- [x] Priorización de próximos pasos
 
 ---
 

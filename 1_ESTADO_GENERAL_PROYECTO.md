@@ -1,6 +1,6 @@
 # 9001app-firebase - Estado General del Proyecto
 
-> **Última Actualización:** 2025-12-28  
+> **Última Actualización:** 2025-12-29  
 > **Estado:** En Desarrollo Activo  
 > **Ambiente Local:** Puerto 3000
 
@@ -14,12 +14,13 @@
 
 - ✅ **Multi-tenant**: Soporte para múltiples organizaciones
 - ✅ **Centro Principal Unificado**: Vista principal con tabs (Noticias, Madurez Org, Mini Copilot)
-- ✅ **Comentarios Inline (estilo Facebook)**: Interacción social en posts
+- ✅ **Don Cándido IA**: Asistente inteligente con chat, generador de documentos y sugerencias proactivas
+- ✅ **Mi Certificación (Journey)**: Roadmap visual de las 6 fases ISO 9001:2015
+- ✅ **Generador IA de Documentos**: Templates ISO con asistencia de IA
 - ✅ **Gestión documental** completa con versionado
 - ✅ **Auditorías internas** con hallazgos y acciones
 - ✅ **CRM y Riesgo Crediticio** integrado para clientes
 - ✅ **MCP (Mini Copiloto)** para automatización
-- ✅ **IA integrada** con chat conversacional
 - ✅ **WhatsApp Business API** vía Twilio para notificaciones
 - ✅ **App Vendedor (PWA)**: Captura de campo offline-first con fotos, audio e IndexedDB
 - 🔄 **Integración Don Juan GIS** (análisis completado, pendiente implementación)
@@ -77,15 +78,15 @@
 3. **App Registros Internos** - Formularios dinámicos para operarios (Q2 2026)
 
 ### Completado Recientemente (Diciembre 2025)
+- ✅ **Don Cándido v2.0 completo**: Chat IA, Journey Dashboard, Generador de Documentos
+- ✅ **Mi Certificación**: Roadmap visual de 6 fases ISO con tareas y progreso
+- ✅ **Generador IA**: 6 templates de documentos ISO (Política, Procedimientos, etc.)
+- ✅ **Sugerencias Proactivas**: Motor de hints contextuales para el usuario
 - ✅ **Kanban de Procesos con Drag & Drop**: Mover tarjetas entre etapas arrastrando
 - ✅ **Checklists por Etapa**: Definir puntos de verificación por etapa de proceso
 - ✅ **API Admin SDK para Tareas**: Migración a Firebase Admin SDK resolviendo permisos
 - ✅ **Centro Principal Unificado**: Noticias como vista principal con tabs integrados
-- ✅ **Tabs Internos**: Noticias, Madurez Organizacional, Mini Copilot en un solo lugar
-- ✅ **Comentarios Inline (Facebook-style)**: Expandibles directamente en cada post
-- ✅ **Navegación Simplificada**: Dashboard, Madurez y Mini Copiloto removidos del sidebar
 - ✅ **App Vendedor (PWA)**: Implementación completa offline-first
-- ✅ Análisis técnico integración Don Cándido + Don Juan GIS
 - ✅ Integración WhatsApp Business API vía Twilio
 
 ---

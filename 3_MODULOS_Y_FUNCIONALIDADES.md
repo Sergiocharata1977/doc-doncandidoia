@@ -1,7 +1,7 @@
 # Módulos y Funcionalidades - 9001app-firebase
 
-> **Total Módulos Dashboard:** 28  
-> **Última Actualización:** 2025-12-26
+> **Total Módulos Dashboard:** 30  
+> **Última Actualización:** 2025-12-29
 
 ---
 
@@ -46,13 +46,148 @@ La ruta `/noticias` es ahora la **vista principal** del sistema. Contiene tabs h
 | **Análisis FODA** | `/analisis-foda` | Contexto organizacional |
 | **Planificación** | `/planificacion-revision-direccion` | Revisión por la dirección |
 
-### 👥 RRHH y Capacitaciones
+### 📊 Gestión de Calidad (Integrado en Procesos)
+
+\u003e **Ubicación en Menú:** Procesos → Objetivos de Calidad / Indicadores / Mediciones / Checklists
 
 | Módulo | Ruta | Funcionalidades |
 |--------|------|-----------------|
-| **Admin** | `/admin` | Gestión de usuarios y roles |
-| **Organigramas** | `/organigramas` | Estructura organizacional visual |
-| **Perfil** | `/perfil` | Perfil de usuario |
+| **Objetivos de Calidad** | `/dashboard/quality/objetivos` | Gestión de objetivos SMART vinculados a procesos |
+| **Indicadores** | `/dashboard/quality/indicadores` | KPIs de calidad con fórmulas y metas |
+| **Mediciones** | `/dashboard/quality/mediciones` | Registro de valores medidos con evidencias |
+| **Checklists** | `/dashboard/calidad/checklists` | Listas de verificación para procesos |
+
+#### Jerarquía de Calidad
+```
+Proceso (Definición)
+  └─ Objetivos de Calidad
+       └─ Indicadores
+            └─ Mediciones
+```
+
+#### Funcionalidades Clave
+
+**Objetivos de Calidad:**
+- Código automático: `OBJ-[PROCESO]-[SECUENCIA]`
+- Vinculación a proceso específico
+- Seguimiento de progreso (%)
+- Metas con fechas de vencimiento
+- Tarjetas clickeables para navegación
+- Edición inline en Single View
+
+**Indicadores:**
+- Código automático: `IND-[OBJETIVO]-[SECUENCIA]`
+- Tipos: Eficacia, Eficiencia, Cumplimiento
+- Fórmulas de cálculo personalizables
+- Rangos de meta (mín/máx)
+- Frecuencia de medición
+- Responsable asignado
+- Sección de mediciones integrada
+
+**Mediciones:**
+- Código automático: `MED-[INDICADOR]-[YYYYMMDD]`
+- Registro de valor medido
+- Fecha y responsable de medición
+- Observaciones y evidencias
+- URL de evidencia opcional
+- Método de medición
+- Tarjetas clickeables en listados
+
+**Características Técnicas:**
+- ✅ Dialogs simplificados para creación rápida
+- ✅ Single Views con edición inline
+- ✅ Código automático en todos los niveles
+- ✅ APIs con Firebase Admin SDK
+- ✅ Navegación jerárquica completa
+- ✅ Filtros por proceso/objetivo/indicador
+- ✅ Integración en Single de Proceso
+
+### 👥 RRHH - Módulo Completo de Recursos Humanos
+
+> **Estado:** En desarrollo activo (Enero 2026)  
+> **Última actualización:** 2026-01-02
+
+| Módulo | Ruta | Funcionalidades |
+|--------|------|-----------------|
+| **Dashboard RRHH** | `/dashboard/rrhh` | Vista general con métricas de personal |
+| **Personal** | `/dashboard/rrhh/personnel` | ABM empleados con estados y puestos |
+| **Personal Detalle** | `/dashboard/rrhh/personnel/[id]` | Single view con competencias actuales |
+| **Puestos** | `/dashboard/rrhh/positions` | Catálogo de puestos con competencias requeridas |
+| **Puesto Detalle** | `/dashboard/rrhh/positions/[id]` | Competencias, personal asignado, procesos |
+| **Departamentos** | `/dashboard/rrhh/departments` | Estructura organizacional |
+| **Competencias** | `/dashboard/rrhh/competencias` | Catálogo de competencias por categoría |
+| **Capacitaciones** | `/dashboard/rrhh/trainings` | Plan de formación con participantes |
+| **Evaluaciones** | `/dashboard/rrhh/evaluations` | Evaluaciones de desempeño grupales |
+| **Evaluación Detalle** | `/dashboard/rrhh/evaluations/[id]` | Matriz empleados × competencias |
+| **Matriz Polivalencia** | `/dashboard/rrhh/matriz-polivalencia` | Visualización de competencias por empleado |
+
+#### Modelo de Datos RRHH
+
+```
+Personnel (Empleado)
+├── puesto → Position (puesto asignado)
+├── competenciasActuales[] → Niveles alcanzados
+└── ultima_evaluacion
+
+Position (Puesto)
+├── competenciasRequeridas[] → PositionCompetence (con nivelRequerido)
+├── procesos_asignados[]
+└── frecuenciaEvaluacion
+
+Competence (Catálogo)
+├── categoria: 'tecnica' | 'blanda' | 'seguridad' | 'iso_9001' | 'otra'
+└── nivelRequerido (global default)
+
+Training (Capacitación)
+├── tipo: 'evaluacion_competencias' | 'evaluacion_capacitacion'
+├── participantes[]
+└── estado: 'programada' | 'en_curso' | 'completada' | 'cancelada'
+
+PerformanceEvaluation (Evaluación)
+├── tipo: 'evaluacion_competencias' | 'evaluacion_capacitacion'
+├── capacitacionId? (si tipo='evaluacion_capacitacion')
+├── competencias_a_evaluar[]
+├── empleados_evaluados[] → Matriz de scores
+└── estado: 'borrador' | 'publicado' | 'cerrado'
+```
+
+#### Flujo de Evaluación Grupal
+
+1. **Crear Evaluación** → Elegir tipo (competencias o eficacia de capacitación)
+2. **Agregar Empleados** → Auto-carga competencias del puesto
+3. **Evaluar** → Matriz con niveles 1-5 por competencia/empleado
+4. **Cerrar y Propagar** → Los niveles evaluados se copian a `Personnel.competenciasActuales`
+5. **Matriz Polivalencia** → Visualiza el estado actual de competencias
+
+#### Características Actuales ✅
+
+- ✅ Evaluaciones grupales (múltiples empleados en una evaluación)
+- ✅ Tipo de evaluación: competencias vs eficacia de capacitación
+- ✅ Auto-carga de competencias desde puesto del empleado
+- ✅ Matriz de polivalencia con colores por nivel
+- ✅ Propagación de niveles a Personnel al cerrar evaluación
+- ✅ Warnings cuando empleado no tiene puesto asignado
+- ✅ Filtros y búsqueda en todos los listados
+- ✅ APIs con Firebase Admin SDK
+
+#### Gaps ISO 9001 Identificados (F-RH-4) ⚠️
+
+| Requisito ISO 9001 | Estado | Pendiente |
+|--------------------|--------|-----------|
+| F-RH-1: Ficha de Personal | ✅ | - |
+| F-RH-2: Descripción de Competencias de Puesto | ✅ | - |
+| F-RH-3: Plan de Formación | ✅ | - |
+| F-RH-4: Registro de Inducción | ⚠️ | Falta campo estructurado |
+| F-RH-4: Evaluación Eficacia Capacitación | ⚠️ | Implementado con tipo='evaluacion_capacitacion' |
+| F-RH-5: Matriz de Polivalencias | ✅ | - |
+
+#### Próximos Pasos RRHH
+
+1. 🔴 **Registro de Inducción** - Agregar campos fecha_induccion, temas[], responsable
+2. 🟡 **Asistencia a Capacitaciones** - Checkbox por participante con firma
+3. 🟡 **Objetivos de Competencia** - Metas individuales por empleado
+4. 🟢 **Exportar Matriz** - Excel/PDF desde Matriz Polivalencia
+
 
 ### 💼 CRM y Análisis de Riesgo Crediticio
 
@@ -62,6 +197,42 @@ La ruta `/noticias` es ahora la **vista principal** del sistema. Contiene tabs h
 | **Cliente Detalle** | `/crm/[id]` | Perfil completo del cliente |
 | **Historial Financiero** | N/A (componente) | Estados para análisis de solvencia |
 | **App Vendedor** | `/vendedor` | PWA para captura de datos en campo (Offline) |
+
+### 🤖 Don Cándido - Asistente IA ISO 9001
+
+| Módulo | Ruta | Funcionalidades |
+|--------|------|-----------------|
+| **Chat IA** | FAB flotante | Chat conversacional para consultas ISO 9001 y uso del sistema |
+| **Mi Certificación** | `/journey` | Roadmap visual de las 6 fases de implementación ISO 9001 |
+| **Detalle de Fase** | `/journey/[id]` | Checklist de tareas, botones "Generar con IA", links a módulos |
+| **Generador IA** | `/generador-documentos` | 6 templates de documentos ISO con asistencia de IA |
+
+#### Funcionalidades Don Cándido
+
+**Chat Inteligente:**
+- Responde preguntas sobre ISO 9001:2015
+- Explica cómo usar cada módulo del sistema
+- Muestra tiempo de respuesta (latencyMs)
+- Modo voz (Speech-to-Text y Text-to-Speech)
+- Modo conversación continua
+
+**Mi Certificación (Journey Dashboard):**
+- Timeline visual de 6 fases: Diagnóstico, Planificación, Diseño, Implementación, Verificación, Certificación
+- Barra de progreso global y por fase
+- Tareas con checkbox de completado
+- Vinculación directa a módulos del sistema
+
+**Generador de Documentos:**
+- 6 templates ISO listos para usar:
+  1. Política de Calidad (5.2)
+  2. Procedimiento Control de Documentos (7.5)
+  3. Procedimiento Auditorías Internas (9.2)
+  4. Procedimiento Acciones Correctivas (10.2)
+  5. Formato Acta de Reunión (7.5, 9.3)
+  6. Objetivos de Calidad (6.2)
+- Formularios dinámicos con campos requeridos
+- Generación con IA (Groq/Claude)
+- Copiar al portapapeles
 
 ### 🤖 MCP (Mini Copiloto)
 

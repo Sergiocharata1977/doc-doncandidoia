@@ -2,7 +2,7 @@
 
 > **Propósito:** Archivos de contexto para sesiones de desarrollo con IA  
 > **Proyecto Principal:** `9001app-firebase`  
-> **Última Actualización:** 2025-12-24
+> **Última Actualización:** 2025-12-29
 
 ---
 
@@ -12,15 +12,49 @@
 |---------|-----------|
 | **1_ESTADO_GENERAL_PROYECTO.md** | Resumen ejecutivo, stack tecnológico, estado actual |
 | **2_ARQUITECTURA_TECNICA.md** | APIs, Firestore, componentes, tipos TypeScript |
-| **3_MODULOS_Y_FUNCIONALIDADES.md** | 28 módulos del dashboard, CRM, MCP detallado |
+| **3_MODULOS_Y_FUNCIONALIDADES.md** | 30 módulos del dashboard, Don Cándido, CRM, MCP detallado |
 | **4_ROADMAP_Y_PENDIENTES.md** | Desarrollo activo, backlog, integraciones |
-| **5_RECOMENDACIONES_TAREAS_SIGUIENTES.md** | Análisis de trabajo completado y próximas tareas priorizadas |
+
+---
+
+## 🤖 Don Cándido - Asistente IA ISO 9001
+
+El sistema cuenta con **Don Cándido**, un asistente de IA especializado en ISO 9001:2015. Incluye:
+
+### 💬 Chat Inteligente (FAB flotante)
+- Responde preguntas sobre ISO 9001:2015
+- Explica cómo usar cada módulo del sistema
+- Muestra tiempo de respuesta en cada mensaje
+- Modo voz (Speech-to-Text y Text-to-Speech)
+
+### 🧭 Mi Certificación (`/journey`)
+Dashboard visual de implementación ISO con:
+- **6 Fases**: Diagnóstico, Planificación, Diseño, Implementación, Verificación, Certificación
+- Barra de progreso global y por fase
+- Checklist de tareas con vinculación a módulos
+- Botones "Generar con IA" para documentos
+
+### ✨ Generador de Documentos (`/generador-documentos`)
+6 templates ISO listos para usar:
+1. **Política de Calidad** (Cláusula 5.2)
+2. **Procedimiento Control de Documentos** (7.5)
+3. **Procedimiento Auditorías Internas** (9.2)
+4. **Procedimiento Acciones Correctivas** (10.2)
+5. **Formato Acta de Reunión** (7.5, 9.3)
+6. **Objetivos de Calidad** (6.2)
+
+### 💡 Sugerencias Proactivas
+Motor de hints contextuales que sugiere:
+- Próximo paso en tu certificación
+- Recordatorios de tareas pendientes
+- Felicitaciones por productividad
+- Alertas de hallazgos/acciones abiertas
 
 ---
 
 ## 🎯 Cómo Usar Estos Archivos
 
-1. **Al iniciar sesión**: Cargar los 4 archivos en el proyecto ChatGPT
+1. **Al iniciar sesión**: Cargar los 4 archivos en el proyecto ChatGPT o Gemini
 2. **Para tareas específicas**: Referenciar el archivo relevante
 3. **Después de cambios grandes**: Actualizar los archivos
 
@@ -31,7 +65,7 @@
 | Proyecto | Descripción | Puerto Local |
 |----------|-------------|--------------|
 | **9001app-firebase** | Sistema ISO 9001 principal | 3000 |
-| **docs-9001app** | Roadmaps Kanban multi-proyecto | 3001 |
+| **docs-9001app** | Documentación y contexto | 3001 |
 | **don-candido-finanzas** | CRM Financiero standalone | 3002 |
 | **sig-agro** | Sistema GIS Agropecuario | 3003 |
 
@@ -47,6 +81,12 @@ npm run dev
 # docs-9001app  
 cd "c:\Users\Usuario\Documents\Proyectos\ISO -conjunto\docs-9001app"
 npm run dev
+
+# Build para producción
+npm run build
+
+# Type check
+npm run type-check
 ```
 
 ---
@@ -57,7 +97,9 @@ npm run dev
 - **TypeScript**
 - **Firebase** (Firestore, Auth, Storage)
 - **Tailwind CSS + Shadcn UI**
-- **Claude AI / ElevenLabs**
+- **Claude AI / Groq** (Chat y generación)
+- **ElevenLabs** (Text-to-Speech)
+- **Twilio** (WhatsApp Business API)
 
 ---
 
@@ -65,8 +107,20 @@ npm run dev
 
 | Fecha | Cambios |
 |-------|---------|
-| 2025-12-24 | **App Vendedor (PWA)**: Captura offline, Sync Engine, Imágenes/Audio, Deploy a Vercel |
-| 2025-12-24 | Integración WhatsApp/Twilio, Análisis Don Juan GIS, Recomendaciones roadmap |
-| 2025-12-22 | Actualización completa: MCP, CRM Financiero, APIs |
-| 2025-12-21 | Agregado historial financiero y estados contables |
-| 2025-12-20 | Filtros CRM y tablero Kanban unificado |
+| 2025-12-29 | **Don Cándido v2.0**: Journey Dashboard, Generador IA, Sugerencias Proactivas |
+| 2025-12-28 | Kanban con Drag & Drop, Checklists por etapa, Fix API Admin SDK |
+| 2025-12-24 | **App Vendedor (PWA)**: Captura offline, Sync Engine, Deploy a Vercel |
+| 2025-12-24 | Integración WhatsApp/Twilio, Análisis Don Juan GIS |
+| 2025-12-22 | MCP, CRM Financiero, APIs actualizadas |
+
+---
+
+## 📖 Documentación del Manual de Usuario
+
+El Manual de Usuario está disponible en: **[docs.doncandidoia.com](https://docs.doncandidoia.com)**
+
+Contiene:
+- Guías por módulo
+- Preguntas frecuentes
+- Casos de uso
+- Roles y permisos
