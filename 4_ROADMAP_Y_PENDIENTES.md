@@ -1,25 +1,38 @@
 # Roadmap y Pendientes - 9001app-firebase
 
-> **Estado al:** 2025-12-29  
-> **Próximo Milestone:** Don Juan GIS Integration + WhatsApp Automation
+> **Estado al:** 2026-01-04  
+> **Próximo Milestone:** Chat IA en Landing + Don Juan GIS Integration
 
 ---
 
 ## 🎯 Roadmap Activo
 
-### Fase Actual: MCP (Mini Copiloto)
+### Fase Actual: Calendario Unificado ✅ COMPLETADO
 
 | Fase | Estado | Descripción |
 |------|--------|-------------|
-| **Fase 1: MVP Extensión** | 🔧 En Progreso | Estructura Chrome Extension Manifest V3 |
-| **Fase 2: APIs 9001app** | ✅ Completado | APIs /mcp/tareas, evidencias, registro |
-| **Fase 3: Panel Visualización** | ✅ Completado | MCPExecutionList, MCPEvidenceViewer |
-| **Fase 4: Agente IA** | 🔜 Pendiente | Intent Parser con Claude/Groq |
-| **Fase 5: Casos Avanzados** | 🔜 Pendiente | Google Sheets, Excel Web |
+| **Calendario Unificado** | ✅ Completado | EventService + integración con todos los módulos |
+| **MCP Extensión** | 🔧 En Progreso | Estructura Chrome Extension Manifest V3 |
+| **Chat IA Landing** | 🔜 Pendiente | Widget conversacional para leads |
 
 ---
 
-## ✅ Recientemente Completado (Diciembre 2025)
+## ✅ Recientemente Completado
+
+### 📅 Calendario Unificado y EventService (4 Ene 2026)
+- [x] **EventService**: Servicio centralizado en `src/services/events/EventService.ts`
+- [x] **Colección `events`**: Datos comunes (titulo, fecha, responsable, estado, tipo)
+- [x] **Integración Capacitaciones**: API POST sincroniza con events + guarda `event_id`
+- [x] **Integración Evaluaciones**: API POST sincroniza con events + guarda `event_id`
+- [x] **Integración Auditorías**: API POST sincroniza con events + guarda `event_id`
+- [x] **Integración Hallazgos**: API POST sincroniza con events + guarda `event_id`
+- [x] **Integración Acciones**: API POST sincroniza con events + guarda `event_id`
+- [x] **Vista Calendario Mes/Semana/Agenda**: Muestra eventos de todos los módulos
+- [x] **Vista Kanban**: Columnas Programado/En Progreso/Completado/Cancelado/Vencido
+- [x] **Mapeo español→inglés**: Estados en español mapeados a columnas del Kanban
+- [x] **Tooltip en eventos**: Popup con info completa al pasar ratón
+- [x] **Widget Próximos Eventos**: Datos reales desde API en página Noticias
+- [x] **Arquitectura normalizada**: Sin duplicación de datos, vinculación bidireccional
 
 ### 🤖 Don Cándido v2.0 - Asistente IA Completo (29 Dic 2025)
 - [x] **Sprint 1: Knowledge Base** - KnowledgeBaseService con contenido del Manual de Usuario
@@ -100,11 +113,6 @@
 - [x] Fix EvaluationService: null check para competencias
 - [x] Warnings cuando empleado no tiene puesto asignado
 - [x] UI mejorada: shadows, rounded corners, badges de tipo
-
-**Análisis Gap ISO 9001 (Procedimiento 5.2-5.4):**
-- [x] Documento de análisis comparativo vs procedimiento RRHH
-- [x] Identificados gaps: inducción, eficacia capacitación, asistencia
-- [x] Priorización de próximos pasos
 
 ---
 

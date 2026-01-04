@@ -1,6 +1,6 @@
 # 9001app-firebase - Estado General del Proyecto
 
-> **Última Actualización:** 2025-12-29  
+> **Última Actualización:** 2026-01-04  
 > **Estado:** En Desarrollo Activo  
 > **Ambiente Local:** Puerto 3000
 
@@ -23,6 +23,7 @@
 - ✅ **MCP (Mini Copiloto)** para automatización
 - ✅ **WhatsApp Business API** vía Twilio para notificaciones
 - ✅ **App Vendedor (PWA)**: Captura de campo offline-first con fotos, audio e IndexedDB
+- ✅ **Calendario Unificado**: Vista Mes/Semana/Agenda/Kanban con eventos de todos los módulos
 - 🔄 **Integración Don Juan GIS** (análisis completado, pendiente implementación)
 
 ---
@@ -39,7 +40,7 @@
 | **Firebase Storage** | Almacenamiento de archivos |
 | **Shadcn/UI** | Componentes UI |
 | **Anthropic Claude** | IA conversacional |
-| **ElevenLabs** | Síntesis de voz |
+| **Groq (Llama 3.1)** | IA rápida para chat |
 | **Twilio WhatsApp API** | Notificaciones y mensajería |
 
 ---
@@ -52,20 +53,22 @@
 │   ├── app/
 │   │   ├── (auth)/           # Login y autenticación
 │   │   ├── (dashboard)/      # Panel principal (28 módulos)
-│   │   │   └── noticias/     # Centro Principal con tabs
+│   │   │   ├── noticias/     # Centro Principal con tabs
+│   │   │   └── calendario/   # Calendario unificado
 │   │   └── api/              # 40+ grupos de APIs
 │   ├── components/           # 27 grupos de componentes
 │   ├── contexts/             # Contextos React
 │   ├── hooks/                # Custom hooks
 │   ├── lib/                  # Firebase config y utilidades
+│   ├── services/             # Servicios (EventService, etc.)
 │   └── types/                # Definiciones TypeScript
 ├── public/                   # Assets estáticos
-└── MCP_IMPLEMENTATION_PLAN.md # Plan de extensión Chrome
+└── scripts/                  # Scripts de mantenimiento
 ```
 
 ---
 
-## 🚀 Desarrollo Activo (Diciembre 2025)
+## 🚀 Desarrollo Activo (Enero 2026)
 
 ### En Progreso
 1. **MCP Extensión Chrome** - Automatización de tareas en ERPs externos (estructura básica creada)
@@ -77,17 +80,27 @@
 2. **Don Juan GIS** - Implementación del motor de verificación (4-6 semanas)
 3. **App Registros Internos** - Formularios dinámicos para operarios (Q2 2026)
 
-### Completado Recientemente (Diciembre 2025)
+### Completado Recientemente
+
+#### 📅 Unificación de Eventos (4 Ene 2026)
+- ✅ **EventService**: Servicio centralizado para sincronizar eventos de todos los módulos
+- ✅ **Colección events unificada**: Datos comunes (titulo, fecha, responsable, estado, tipo)
+- ✅ **Integración completa**: Capacitaciones, Evaluaciones, Auditorías, Hallazgos, Acciones
+- ✅ **Vista Kanban**: Mapeo español→inglés para mostrar eventos por estado
+- ✅ **Tooltip en Calendario**: Info completa al pasar ratón sobre eventos
+- ✅ **Widget Próximos Eventos**: Datos reales en página de Noticias
+- ✅ **Vinculación bidireccional**: `event_id` en módulos, `source_collection/source_id` en events
+
+#### 🎄 Diciembre 2025
 - ✅ **Don Cándido v2.0 completo**: Chat IA, Journey Dashboard, Generador de Documentos
 - ✅ **Mi Certificación**: Roadmap visual de 6 fases ISO con tareas y progreso
 - ✅ **Generador IA**: 6 templates de documentos ISO (Política, Procedimientos, etc.)
 - ✅ **Sugerencias Proactivas**: Motor de hints contextuales para el usuario
 - ✅ **Kanban de Procesos con Drag & Drop**: Mover tarjetas entre etapas arrastrando
 - ✅ **Checklists por Etapa**: Definir puntos de verificación por etapa de proceso
-- ✅ **API Admin SDK para Tareas**: Migración a Firebase Admin SDK resolviendo permisos
 - ✅ **Centro Principal Unificado**: Noticias como vista principal con tabs integrados
 - ✅ **App Vendedor (PWA)**: Implementación completa offline-first
-- ✅ Integración WhatsApp Business API vía Twilio
+- ✅ **RRHH Refactorizado**: Evaluaciones grupales, Matriz de Polivalencia
 
 ---
 
