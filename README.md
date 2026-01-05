@@ -2,7 +2,7 @@
 
 > **Propósito:** Archivos de contexto para sesiones de desarrollo con IA  
 > **Proyecto Principal:** `9001app-firebase`  
-> **Última Actualización:** 2025-12-29
+> **Última Actualización:** 2026-01-05
 
 ---
 
@@ -14,6 +14,8 @@
 | **2_ARQUITECTURA_TECNICA.md** | APIs, Firestore, componentes, tipos TypeScript |
 | **3_MODULOS_Y_FUNCIONALIDADES.md** | 30 módulos del dashboard, Don Cándido, CRM, MCP detallado |
 | **4_ROADMAP_Y_PENDIENTES.md** | Desarrollo activo, backlog, integraciones |
+| **SEGURIDAD_FASE6_RESUMEN.md** | Mejoras de seguridad multi-tenant (Enero 2026) |
+| **PLAN_SESSION_COOKIES.md** | Plan de refactor de autenticación httpOnly (Pendiente) |
 
 ---
 
@@ -107,6 +109,8 @@ npm run type-check
 
 | Fecha | Cambios |
 |-------|---------|
+| 2026-01-05 | **Seguridad Multi-Tenant**: Firestore rules corregido, AuditLogService, IAOutputValidator, Webhook Mobbex HMAC |
+| 2026-01-05 | **Multi-Tenancy Completo**: Fases 1-5 (Types, Services, Rules, APIs, Storage) |
 | 2025-12-29 | **Don Cándido v2.0**: Journey Dashboard, Generador IA, Sugerencias Proactivas |
 | 2025-12-28 | Kanban con Drag & Drop, Checklists por etapa, Fix API Admin SDK |
 | 2025-12-24 | **App Vendedor (PWA)**: Captura offline, Sync Engine, Deploy a Vercel |
