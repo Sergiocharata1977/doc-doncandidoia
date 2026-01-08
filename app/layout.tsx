@@ -1,4 +1,5 @@
-import { Navigation } from '@/components/Navigation'
+import { MobileNav } from '@/components/MobileNav'
+import { Sidebar } from '@/components/Sidebar'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -19,10 +20,29 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={inter.className}>
-        <Navigation />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        {/* Mobile Navigation */}
+        <MobileNav />
+
+        {/* Desktop Header */}
+        <header className="hidden md:flex sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200 h-16 items-center px-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-xl">9</span>
+            </div>
+            <div>
+              <div className="font-bold text-gray-900">9001 App</div>
+              <div className="text-xs text-gray-500">Manual de Usuario</div>
+            </div>
+          </div>
+        </header>
+
+        {/* Main Layout with Sidebar */}
+        <div className="flex">
+          <Sidebar />
+          <main className="flex-1 min-h-[calc(100vh-64px)] overflow-y-auto">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   )
