@@ -1,6 +1,6 @@
 # 9001app-firebase - Estado General del Proyecto
 
-> **Última Actualización:** 2026-01-04  
+> **Última Actualización:** 2026-01-08  
 > **Estado:** En Desarrollo Activo  
 > **Ambiente Local:** Puerto 3000
 
@@ -22,7 +22,7 @@
 - ✅ **CRM y Riesgo Crediticio** integrado para clientes
 - ✅ **MCP (Mini Copiloto)** para automatización
 - ✅ **WhatsApp Business API** vía Twilio para notificaciones
-- ✅ **App Vendedor (PWA)**: Captura de campo offline-first con fotos, audio e IndexedDB
+- ✅ **App Vendedor PWA** (`/app-vendedor`): Layout móvil independiente, offline-first, botón de actualización
 - ✅ **Calendario Unificado**: Vista Mes/Semana/Agenda/Kanban con eventos de todos los módulos
 - 🔄 **Integración Don Juan GIS** (análisis completado, pendiente implementación)
 
@@ -55,6 +55,8 @@
 │   │   ├── (dashboard)/      # Panel principal (28 módulos)
 │   │   │   ├── noticias/     # Centro Principal con tabs
 │   │   │   └── calendario/   # Calendario unificado
+│   │   ├── app-vendedor/     # PWA Móvil independiente
+│   │   ├── instalar/         # Landing instalación PWA
 │   │   └── api/              # 40+ grupos de APIs
 │   ├── components/           # 27 grupos de componentes
 │   ├── contexts/             # Contextos React
@@ -62,7 +64,7 @@
 │   ├── lib/                  # Firebase config y utilidades
 │   ├── services/             # Servicios (EventService, etc.)
 │   └── types/                # Definiciones TypeScript
-├── public/                   # Assets estáticos
+├── public/                   # Assets estáticos, manifest.json, sw.js
 └── scripts/                  # Scripts de mantenimiento
 ```
 
@@ -91,6 +93,15 @@
 - ✅ **Widget Próximos Eventos**: Datos reales en página de Noticias
 - ✅ **Vinculación bidireccional**: `event_id` en módulos, `source_collection/source_id` en events
 
+#### 📱 PWA App Vendedor Separada (8 Ene 2026)
+- ✅ **Ruta `/app-vendedor`** separada del dashboard para layout móvil independiente
+- ✅ **Manifest.json** con scope `/app-vendedor` para instalación PWA dedicada
+- ✅ **Botón Actualizar App** en header que detecta nuevas versiones del Service Worker
+- ✅ **Menú móvil limpio** sin tabs de desktop (Dashboard, Madurez, Mini Copiloto ocultados)
+- ✅ **Bottom navigation** con Inicio, Clientes, Mapa, Sync, Perfil
+- ✅ **Indicador Online/Offline** en header
+- ✅ **Checklist QA** creado en docs-9001app
+
 #### 🎄 Diciembre 2025
 - ✅ **Don Cándido v2.0 completo**: Chat IA, Journey Dashboard, Generador de Documentos
 - ✅ **Mi Certificación**: Roadmap visual de 6 fases ISO con tareas y progreso
@@ -99,7 +110,6 @@
 - ✅ **Kanban de Procesos con Drag & Drop**: Mover tarjetas entre etapas arrastrando
 - ✅ **Checklists por Etapa**: Definir puntos de verificación por etapa de proceso
 - ✅ **Centro Principal Unificado**: Noticias como vista principal con tabs integrados
-- ✅ **App Vendedor (PWA)**: Implementación completa offline-first
 - ✅ **RRHH Refactorizado**: Evaluaciones grupales, Matriz de Polivalencia
 
 ---

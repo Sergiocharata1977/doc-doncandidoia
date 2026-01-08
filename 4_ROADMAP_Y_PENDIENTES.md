@@ -1,7 +1,7 @@
 # Roadmap y Pendientes - 9001app-firebase
 
-> **Estado al:** 2026-01-04  
-> **Próximo Milestone:** Chat IA en Landing + Don Juan GIS Integration
+> **Estado al:** 2026-01-08  
+> **Próximo Milestone:** Responsive CRM + Calendario Móvil
 
 ---
 
@@ -229,14 +229,22 @@ Colecciones Firestore: 15+
 
 ## 📱 Nuevas Features Propuestas
 
-### App Vendedor (PWA) ✅
+### App Vendedor (PWA) ✅ COMPLETADO
 ```
-Estado: Completado e Integrado
-- [x] Captura de fotos (campos, instalaciones, maquinaria)
-- [x] Notas de voz con almacenamiento en Storage
-- [x] Formularios offline-first con IndexedDB y Sync Engine
-- [x] GPS automático para verificación
-- [x] Sincronización inteligente con backoff
+Estado: Completado e Integrado (8 Ene 2026)
+- [x] Layout móvil independiente en /app-vendedor
+- [x] Manifest.json con scope /app-vendedor
+- [x] Botón de actualización PWA en header
+- [x] Menú móvil sin tabs de desktop
+- [x] Bottom navigation (Inicio, Clientes, Mapa, Sync, Perfil)
+- [x] Indicador Online/Offline
+- [x] Service Worker con cache strategies
+- [x] Página /instalar con instrucciones iOS/Android
+
+Pendientes:
+- [ ] CRM responsive (Kanban móvil)
+- [ ] Calendario responsive
+- [ ] Funcionalidad de mapa real
 ```
 
 ### Chat IA en Landing Page
